@@ -1,7 +1,7 @@
 import { NextResponse } from 'next/server';
 import dbConnect from '../../../libs/dbConnect';
 import Property from '../../../libs/models/property';
-import { verifyToken } from '../../../libs/auth';
+import { verifyToken } from '../../../libs/auth/Token.js';
 
 // Get a single property
 export async function GET(request, { params }) {
@@ -69,7 +69,8 @@ export async function PUT(request, { params }) {
     // Handle image upload
     const image = formData.get('image');
     
-    if (image) {
+    if (image && image instanceof Blob) {
+      // Process the image file
       const imageBuffer = Buffer.from(await image.arrayBuffer());
       const imageType = image.type;
       const base64Image = `data:${imageType};base64,${imageBuffer.toString('base64')}`;

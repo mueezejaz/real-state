@@ -214,10 +214,9 @@ export default function AdminDashboard() {
               const response = await fetch('/api/properties', {
                 method: 'POST',
                 headers: {
-                  'Content-Type': 'application/json',
                   'Authorization': `Bearer ${token}`
                 },
-                body: JSON.stringify(formData),
+                body: formData, // Send as FormData directly
               });
               
               if (!response.ok) {
@@ -247,10 +246,9 @@ export default function AdminDashboard() {
               const response = await fetch(`/api/properties/${currentProperty._id}`, {
                 method: 'PUT',
                 headers: {
-                  'Content-Type': 'application/json',
                   'Authorization': `Bearer ${token}`
                 },
-                body: JSON.stringify(formData),
+                body: formData, // Send as FormData directly
               });
               
               if (!response.ok) {
@@ -272,13 +270,31 @@ export default function AdminDashboard() {
   );
 }
 
+
 function PropertyFormModal({ property, onClose, onSubmit, title, submitLabel }) {
   const [formData, setFormData] = useState(property);
   const [isSubmitting, setIsSubmitting] = useState(false);
+  const [imagePreview, setImagePreview] = useState(property.imageUrl || null);
+  const [imageFile, setImageFile] = useState(null);
   
   const handleChange = (e) => {
     const { name, value } = e.target;
     setFormData(prev => ({ ...prev, [name]: value }));
+  };
+  
+  const handleImageChange = (e) => {
+    const file = e.target.files[0];
+    if (!file) return;
+    
+    // Set the file for upload
+    setImageFile(file);
+    
+    // Create preview
+    const reader = new FileReader();
+    reader.onload = () => {
+      setImagePreview(reader.result);
+    };
+    reader.readAsDataURL(file);
   };
   
   const handleSubmit = async (e) => {
@@ -286,7 +302,24 @@ function PropertyFormModal({ property, onClose, onSubmit, title, submitLabel }) 
     setIsSubmitting(true);
     
     try {
-      await onSubmit(formData);
+      // Create form data for multipart/form-data submission
+      const submitFormData = new FormData();
+      
+      // Add all form fields
+      Object.keys(formData).forEach(key => {
+        if (key !== 'imageUrl') { // Skip imageUrl as we're handling it separately
+          submitFormData.append(key, formData[key]);
+        }
+      });
+      
+      // Add image file if selected, otherwise use existing imageUrl
+      if (imageFile) {
+        submitFormData.append('image', imageFile);
+      } else if (formData.imageUrl) {
+        submitFormData.append('imageUrl', formData.imageUrl);
+      }
+      
+      await onSubmit(submitFormData);
     } finally {
       setIsSubmitting(false);
     }
@@ -377,15 +410,28 @@ function PropertyFormModal({ property, onClose, onSubmit, title, submitLabel }) 
               />
             </div>
             <div>
-              <label className="block text-gray-700 font-medium mb-2">Image URL</label>
-              <input
-                type="url"
-                name="imageUrl"
-                value={formData.imageUrl}
-                onChange={handleChange}
-                className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-blue-500 outline-none"
-                required
-              />
+              <label className="block text-gray-700 font-medium mb-2">Property Image</label>
+              <div className="flex flex-col space-y-4">
+                {imagePreview && (
+                  <div className="relative h-40 w-full rounded-lg overflow-hidden bg-gray-100">
+                    <img 
+                      src={imagePreview} 
+                      alt="Property Preview" 
+                      className="h-full w-full object-contain"
+                    />
+                  </div>
+                )}
+                <input
+                  type="file"
+                  name="image"
+                  accept="image/*"
+                  onChange={handleImageChange}
+                  className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-blue-500 outline-none"
+                />
+                <p className="text-sm text-gray-500">
+                  {imageFile ? "New image selected" : "Choose an image file or keep existing image"}
+                </p>
+              </div>
             </div>
           </div>
           
