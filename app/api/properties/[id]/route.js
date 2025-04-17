@@ -39,6 +39,7 @@ export async function GET(request, { params }) {
 }
 
 // Update a property
+// Update a property
 export async function PUT(request, { params }) {
   try {
     // Authenticate admin
@@ -69,7 +70,7 @@ export async function PUT(request, { params }) {
     // Handle image upload
     const image = formData.get('image');
     
-    if (image && image instanceof Blob) {
+    if (image && image.size > 0) {
       // Process the image file
       const imageBuffer = Buffer.from(await image.arrayBuffer());
       const imageType = image.type;

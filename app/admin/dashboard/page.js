@@ -305,21 +305,29 @@ function PropertyFormModal({ property, onClose, onSubmit, title, submitLabel }) 
       // Create form data for multipart/form-data submission
       const submitFormData = new FormData();
       
-      // Add all form fields
+      // Add all form fields except imageUrl and _id
       Object.keys(formData).forEach(key => {
-        if (key !== 'imageUrl') { // Skip imageUrl as we're handling it separately
+        if (key !== 'imageUrl' && key !== '_id') {
           submitFormData.append(key, formData[key]);
         }
       });
+      
+      // If this is an edit operation, pass the ID separately
+      if (property._id) {
+        submitFormData.append('propertyId', property._id);
+      }
       
       // Add image file if selected, otherwise use existing imageUrl
       if (imageFile) {
         submitFormData.append('image', imageFile);
       } else if (formData.imageUrl) {
+        // Only send the imageUrl if we're not uploading a new image
         submitFormData.append('imageUrl', formData.imageUrl);
       }
       
       await onSubmit(submitFormData);
+    } catch (error) {
+      console.error('Error submitting property:', error);
     } finally {
       setIsSubmitting(false);
     }

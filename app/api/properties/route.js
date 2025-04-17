@@ -9,7 +9,7 @@ export async function GET(request) {
     // Authenticate admin
     const token = request.headers.get('Authorization')?.split(' ')[1];
     const isAuthenticated = await verifyToken(token);
-   console.log(isAuthenticated) 
+    
     if (!isAuthenticated) {
       return NextResponse.json(
         { success: false, message: 'Unauthorized' },
@@ -30,6 +30,7 @@ export async function GET(request) {
   }
 }
 
+// Create new property
 // Create new property
 export async function POST(request) {
   try {
@@ -61,7 +62,8 @@ export async function POST(request) {
     // Handle image upload
     const image = formData.get('image');
     
-    if (image) {
+    if (image && image.size > 0) {
+      // Process the image file
       const imageBuffer = Buffer.from(await image.arrayBuffer());
       const imageType = image.type;
       const base64Image = `data:${imageType};base64,${imageBuffer.toString('base64')}`;
