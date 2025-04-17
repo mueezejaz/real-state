@@ -2,7 +2,8 @@ import { NextResponse } from 'next/server';
 import dbConnect from '../../../libs/dbConnect.js';
 import Admin from '../../../libs/models/admin.js';
 import jwt from 'jsonwebtoken';
-
+import dotenv from 'dotenv'
+dotenv.config()
 export async function POST(request) {
   try {
     // Connect to database
