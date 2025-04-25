@@ -26,12 +26,11 @@ const Home = () => {
 
   return (
     <div className="min-h-screen bg-white">
-      {/* <LoadingScreen /> */}
+      <LoadingScreen />
       <motion.div
         className="fixed top-0 left-0 right-0 h-1 bg-estate-blue z-50"
         style={{ scaleX, transformOrigin: "0%" }}
       />
-      <LoadingScreen/>
        <Navbar />
       <HeroSection />
       <AboutSection />

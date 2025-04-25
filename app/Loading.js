@@ -29,7 +29,7 @@ const LoadingScreen = () => {
         <motion.img 
           src="./real.png" 
           alt="Blue Estate Logo" 
-          className="h-16 mb-8"
+          className="h-[200px] w-[170px] mb-8"
           initial={{ scale: 0.8, opacity: 0 }}
           animate={{ scale: 1, opacity: 1 }}
           transition={{ duration: 0.5 }}

@@ -22,7 +22,7 @@ const Navbar = () => {
             transition={{ delay: 0.2 }}
           >
             <a href="/" className="flex items-center">
-              <img src="./adada.png" alt="Blue Estate Logo" className="h-8" />
+              <img src="./adada.png" alt="Blue Estate Logo" className="h-[50px] w-[45px]" />
             </a>
           </motion.div>
           
