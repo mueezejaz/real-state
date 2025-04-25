@@ -1,19 +1,19 @@
 import { motion } from "framer-motion";
 import { useEffect, useState } from "react";
 
-const LoadingScreen = () => {
-//   const [isLoading, setIsLoading] = useState(true);
+const Loading = () => {
+  const [isLoading, setIsLoading] = useState(true);
 
-//   useEffect(() => {
-//     // Simulate loading assets
-//     const timer = setTimeout(() => {
-//       setIsLoading(false);
-//     }, 2000);
+  useEffect(() => {
+    // Simulate loading assets
+    const timer = setTimeout(() => {
+      setIsLoading(false);
+    }, 2000);
 
-//     return () => clearTimeout(timer);
-//   }, []);
+    return () => clearTimeout(timer);
+  }, []);
 
-//   if (!isLoading) return null;
+  if (!isLoading) return null;
 
   return (
     <motion.div
@@ -57,4 +57,4 @@ const LoadingScreen = () => {
   );
 };
 
-export default LoadingScreen;
+export default Loading;

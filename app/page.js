@@ -10,7 +10,7 @@ import WhyChooseSection from "./components/WhyChooseSection.js";
 import ContactSection from "./components/ContactSection.js";
 import ReviewsSection from "./components/ReviewSection.js";
 import Footer from "./components/Footer.js";
-import LoadingScreen from "./Loading.js";
+// import Loading from "./Loading.js";
 
 const Home = () => {
   const { scrollYProgress } = useScroll();
@@ -26,7 +26,7 @@ const Home = () => {
 
   return (
     <div className="min-h-screen bg-white">
-      <LoadingScreen />
+      {/* <Loading/> */}
       <motion.div
         className="fixed top-0 left-0 right-0 h-1 bg-estate-blue z-50"
         style={{ scaleX, transformOrigin: "0%" }}
