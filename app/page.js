@@ -1,6 +1,7 @@
 'use client'
 import { useEffect } from "react";
 import { motion, useScroll, useSpring } from "framer-motion";
+import { ChevronUp, MessageCircle } from "lucide-react"; // <-- Import icons
 
 // Import all components
 import Navbar from "./components/Navbar.js";
@@ -25,7 +26,7 @@ const Home = () => {
   }, []);
 
   return (
-    <div className="min-h-screen bg-white">
+    <div className="min-h-screen bg-white relative">
       {/* <Loading/> */}
       <motion.div
         className="fixed top-0 left-0 right-0 h-1 bg-estate-blue z-50"
@@ -38,7 +39,12 @@ const Home = () => {
       <ContactSection />
       <ReviewsSection />
       <Footer />
-      <BackToTopButton />
+      
+      {/* Floating buttons */}
+      <div className="fixed bottom-6 right-6 flex flex-col items-end gap-4 z-40">
+        <BackToTopButton />
+        <WhatsAppButton />
+      </div>
     </div>
   );
 };
@@ -55,7 +61,7 @@ const BackToTopButton = () => {
   
   return (
     <motion.button
-      className="fixed bottom-6 right-6 p-3 rounded-full bg-estate-blue text-white shadow-lg z-40"
+      className="p-3 rounded-full bg-estate-blue text-white shadow-lg"
       onClick={handleScrollToTop}
       initial={{ opacity: 0, scale: 0.8 }}
       animate={{ 
@@ -65,11 +71,28 @@ const BackToTopButton = () => {
       whileHover={{ scale: 1.1 }}
       whileTap={{ scale: 0.9 }}
     >
-      <svg xmlns="http://www.w3.org/2000/svg" className="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M5 15l7-7 7 7" />
-      </svg>
+      <ChevronUp className="h-6 w-6" />
     </motion.button>
   );
 };
 
+const WhatsAppButton = () => {
+  const phoneNumber = "923001234567"; // your WhatsApp number
+  
+  return (
+    <motion.a
+      href={`https://wa.me/${phoneNumber}`}
+      target="_blank"
+      rel="noopener noreferrer"
+      className="p-3 rounded-full bg-green-500 text-white shadow-lg"
+      whileHover={{ scale: 1.1 }}
+      whileTap={{ scale: 0.9 }}
+    >
+      <MessageCircle className="h-6 w-6" />
+    </motion.a>
+  );
+};
+
 export default Home;
+
+
