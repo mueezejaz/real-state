@@ -19,19 +19,15 @@ const ContactSection = () => {
   const handleSubmit = (e) => {
     e.preventDefault();
     
-    // Get form data
     const formData = new FormData(e.target);
     const formValues = Object.fromEntries(formData.entries());
     
-    // Log form data to console
     console.log("Form Data:", formValues);
     
-    // Validate form data with Zod
     try {
       const validatedData = contactFormSchema.parse(formValues);
       console.log("Validated Data:", validatedData);
       setFormErrors({});
-      // Here you would typically send the data to your backend
       alert("Form submitted successfully!");
     } catch (error) {
       if (error.errors) {
@@ -61,7 +57,7 @@ const ContactSection = () => {
           </h2>
           <div className="w-24 h-1 bg-purple-green-blue-gradient mx-auto mb-6"></div>
           <p className="max-w-3xl mx-auto text-estate-darkText/80 text-lg">
-            Have questions about our construction projects or services? Reach out to our team and we'll get back to you as soon as possible.
+            Want to know more about our construction, fiber optic, OSP, or civil works? Reach out to Future Prospects Modern Business LLC — we’re here to help you build with quality, efficiency, and innovation.
           </p>
         </motion.div>
 
@@ -80,21 +76,21 @@ const ContactSection = () => {
               <ContactInfo 
                 icon={<Phone className="text-estate-blue" />}
                 title="Phone"
-                details={["(123) 456-7890", "(098) 765-4321"]}
+                details={["+971 50 123 4567", "+971 55 987 6543"]}
                 bgColor="bg-estate-lightBlue"
               />
               
               <ContactInfo 
                 icon={<Mail className="text-estate-green" />}
                 title="Email"
-                details={["info@futureprospects.com", "support@futureprospects.com"]}
+                details={["info@futureprospectsllc.com", "projects@futureprospectsllc.com"]}
                 bgColor="bg-estate-lightGreen"
               />
               
               <ContactInfo 
                 icon={<MapPin className="text-estate-purple" />}
                 title="Office"
-                details={["123 Construction Avenue", "New York, NY 10001"]}
+                details={["Business Bay, Dubai", "United Arab Emirates"]}
                 bgColor="bg-estate-lightPurple"
               />
             </div>
@@ -177,10 +173,11 @@ const ContactSection = () => {
                 name="service"
                 options={[
                   { value: "", label: "Select a service" },
-                  { value: "residential", label: "Residential Construction" },
-                  { value: "commercial", label: "Commercial Projects" },
-                  { value: "renovation", label: "Renovations" },
-                  { value: "consulting", label: "Construction Consulting" },
+                  { value: "building", label: "Building Contracting" },
+                  { value: "fiber", label: "Fiber Optic / OSP Works" },
+                  { value: "tower", label: "Tower Construction" },
+                  { value: "roads", label: "Road Maintenance" },
+                  { value: "civil", label: "Civil Works & Waterline" },
                 ]}
                 error={formErrors.service}
                 borderColor="focus:ring-estate-green focus:border-estate-green"
