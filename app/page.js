@@ -77,7 +77,7 @@ const BackToTopButton = () => {
 };
 
 const WhatsAppButton = () => {
-  const phoneNumber = "923001234567"; // your WhatsApp number
+  const phoneNumber = "+96879995329"; // your WhatsApp number
   
   return (
     <motion.a
@@ -88,7 +88,7 @@ const WhatsAppButton = () => {
       whileHover={{ scale: 1.1 }}
       whileTap={{ scale: 0.9 }}
     >
-      <MessageCircle className="h-6 w-6" />
+      <MessageCircle width={50} height={50} className="h-6 w-6" />
     </motion.a>
   );
 };

@@ -78,8 +78,6 @@ const HeroSection = () => {
                 transition: { rotate: { repeat: Infinity, duration: 2 } }
               }}
             >
-              <div className="absolute inset-0 bg-gradient-to-br from-estate-purple/20 to-estate-green/20 backdrop-blur-md rounded-xl shadow-lg transform -rotate-3"></div>
-              <div className="absolute inset-0 bg-gradient-to-tl from-estate-purple/20 to-estate-green/20 backdrop-blur-sm rounded-xl shadow-lg transform rotate-3"></div>
 
               <motion.div
                 className="absolute -top-24 -left-24 w-64 h-64 bg-estate-blue/40 rounded-full filter blur-3xl"
@@ -94,7 +92,6 @@ const HeroSection = () => {
                 }}
               />
 
-              <div className="relative p-6 flex justify-center items-center backdrop-blur-sm rounded-xl overflow-hidden border border-white/30 bg-black/2">
                 <div className="absolute inset-0 flex items-center justify-center overflow-hidden">
                   {[...Array(6)].map((_, i) => (
                     <motion.div
@@ -128,7 +125,6 @@ const HeroSection = () => {
                   style={{ filter: "drop-shadow(0 0 8px rgba(255,255,255,0.5))" }}
                   loading="eager"
                 />
-              </div>
             </motion.div>
           </motion.div>
         </div>
