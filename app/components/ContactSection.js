@@ -47,7 +47,7 @@ const ContactSection = () => {
   };
 
   return (
-    <section id="contact" className="py-20 bg-white">
+    <section id="contact" className="py-20 bg-gradient-to-br from-estate-lightPurple via-white to-estate-lightGreen">
       <div className="container mx-auto px-4 sm:px-6 lg:px-8">
         <motion.div
           initial={{ opacity: 0, y: 20 }}
@@ -56,10 +56,12 @@ const ContactSection = () => {
           transition={{ duration: 0.6 }}
           className="text-center mb-16"
         >
-          <h2 className="text-3xl md:text-4xl font-bold text-estate-darkText mb-4">Get In <span className="text-estate-blue">Touch</span></h2>
-          <div className="w-24 h-1 bg-estate-blue mx-auto mb-6"></div>
+          <h2 className="text-3xl md:text-4xl font-bold text-estate-darkText mb-4">
+            Get In <span className="text-estate-blue">Touch</span> <span className="text-estate-purple">With</span> <span className="text-estate-green">Us</span>
+          </h2>
+          <div className="w-24 h-1 bg-purple-green-blue-gradient mx-auto mb-6"></div>
           <p className="max-w-3xl mx-auto text-estate-darkText/80 text-lg">
-            Have questions about our properties or services? Reach out to our team and we'll get back to you as soon as possible.
+            Have questions about our construction projects or services? Reach out to our team and we'll get back to you as soon as possible.
           </p>
         </motion.div>
 
@@ -70,33 +72,36 @@ const ContactSection = () => {
             whileInView={{ opacity: 1, x: 0 }}
             viewport={{ once: true }}
             transition={{ duration: 0.6 }}
-            className="lg:col-span-2 bg-estate-lightGray rounded-lg p-8"
+            className="lg:col-span-2 bg-white rounded-lg p-8 shadow-lg border-t-4 border-estate-purple"
           >
-            <h3 className="text-2xl font-bold text-estate-darkText mb-6">Contact Information</h3>
+            <h3 className="text-2xl font-bold text-estate-purple mb-6">Contact Information</h3>
             
-            <div className="space-y-6">
+            <div className="space-y-8">
               <ContactInfo 
                 icon={<Phone className="text-estate-blue" />}
                 title="Phone"
                 details={["(123) 456-7890", "(098) 765-4321"]}
+                bgColor="bg-estate-lightBlue"
               />
               
               <ContactInfo 
-                icon={<Mail className="text-estate-deepGreen" />}
+                icon={<Mail className="text-estate-green" />}
                 title="Email"
-                details={["info@blueestate.com", "support@blueestate.com"]}
+                details={["info@futureprospects.com", "support@futureprospects.com"]}
+                bgColor="bg-estate-lightGreen"
               />
               
               <ContactInfo 
-                icon={<MapPin className="text-estate-orange" />}
+                icon={<MapPin className="text-estate-purple" />}
                 title="Office"
-                details={["123 Real Estate Avenue", "New York, NY 10001"]}
+                details={["123 Construction Avenue", "New York, NY 10001"]}
+                bgColor="bg-estate-lightPurple"
               />
             </div>
             
-            <div className="mt-10">
-              <h4 className="text-lg font-semibold text-estate-darkText mb-4">Office Hours</h4>
-              <div className="space-y-2 text-estate-darkText/70">
+            <div className="mt-10 p-6 bg-blue-purple-gradient rounded-lg text-white">
+              <h4 className="text-lg font-semibold mb-4">Office Hours</h4>
+              <div className="space-y-2">
                 <p className="flex justify-between">
                   <span>Monday - Friday:</span>
                   <span>9:00 AM - 6:00 PM</span>
@@ -119,9 +124,9 @@ const ContactSection = () => {
             whileInView={{ opacity: 1, x: 0 }}
             viewport={{ once: true }}
             transition={{ duration: 0.6 }}
-            className="lg:col-span-3 bg-white rounded-lg p-8 shadow-xl"
+            className="lg:col-span-3 bg-white rounded-lg p-8 shadow-xl border-t-4 border-estate-blue"
           >
-            <h3 className="text-2xl font-bold text-estate-darkText mb-6">Send Us a Message</h3>
+            <h3 className="text-2xl font-bold text-estate-blue mb-6">Send Us a Message</h3>
             
             <form className="space-y-6" onSubmit={handleSubmit}>
               <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
@@ -132,6 +137,7 @@ const ContactSection = () => {
                   placeholder="Your first name"
                   required
                   error={formErrors.firstName}
+                  borderColor="focus:ring-estate-purple focus:border-estate-purple"
                 />
                 
                 <FormInput 
@@ -141,6 +147,7 @@ const ContactSection = () => {
                   placeholder="Your last name"
                   required
                   error={formErrors.lastName}
+                  borderColor="focus:ring-estate-purple focus:border-estate-purple"
                 />
               </div>
               
@@ -152,6 +159,7 @@ const ContactSection = () => {
                   placeholder="Your email address"
                   required
                   error={formErrors.email}
+                  borderColor="focus:ring-estate-blue focus:border-estate-blue"
                 />
                 
                 <FormInput 
@@ -160,6 +168,7 @@ const ContactSection = () => {
                   name="phone"
                   placeholder="Your phone number"
                   error={formErrors.phone}
+                  borderColor="focus:ring-estate-blue focus:border-estate-blue"
                 />
               </div>
               
@@ -168,25 +177,27 @@ const ContactSection = () => {
                 name="service"
                 options={[
                   { value: "", label: "Select a service" },
-                  { value: "buying", label: "Buying Property" },
-                  { value: "selling", label: "Selling Property" },
-                  { value: "renting", label: "Renting Property" },
-                  { value: "investment", label: "Investment Consultation" },
+                  { value: "residential", label: "Residential Construction" },
+                  { value: "commercial", label: "Commercial Projects" },
+                  { value: "renovation", label: "Renovations" },
+                  { value: "consulting", label: "Construction Consulting" },
                 ]}
                 error={formErrors.service}
+                borderColor="focus:ring-estate-green focus:border-estate-green"
               />
               
               <FormTextarea 
                 label="Message"
                 name="message"
-                placeholder="Tell us about your requirements or questions..."
+                placeholder="Tell us about your project requirements or questions..."
                 rows={4}
                 error={formErrors.message}
+                borderColor="focus:ring-estate-green focus:border-estate-green"
               />
               
               <motion.button
                 type="submit"
-                className="bg-estate-blue text-white px-8 py-3 rounded-md font-medium w-full flex items-center justify-center gap-2 hover:bg-estate-blue/90 transition-colors"
+                className="bg-gradient-to-r from-estate-purple via-estate-blue to-estate-green text-white px-8 py-3 rounded-md font-medium w-full flex items-center justify-center gap-2 hover:opacity-90 transition-colors"
                 whileHover={{ scale: 1.02 }}
                 whileTap={{ scale: 0.98 }}
               >
@@ -201,9 +212,9 @@ const ContactSection = () => {
   );
 };
 
-const ContactInfo = ({ icon, title, details }) => (
+const ContactInfo = ({ icon, title, details, bgColor }) => (
   <div className="flex items-start gap-4">
-    <div className="mt-1 flex-shrink-0 w-10 h-10 flex items-center justify-center rounded-full bg-white">
+    <div className={`mt-1 flex-shrink-0 w-12 h-12 flex items-center justify-center rounded-full ${bgColor || "bg-estate-lightGray"}`}>
       {icon}
     </div>
     <div>
@@ -215,7 +226,7 @@ const ContactInfo = ({ icon, title, details }) => (
   </div>
 );
 
-const FormInput = ({ label, type, name, placeholder, required = false, error }) => (
+const FormInput = ({ label, type, name, placeholder, required = false, error, borderColor }) => (
   <div>
     <label htmlFor={name} className="block text-sm font-medium text-estate-darkText mb-2">
       {label} {required && <span className="text-red-500">*</span>}
@@ -226,13 +237,13 @@ const FormInput = ({ label, type, name, placeholder, required = false, error }) 
       name={name}
       placeholder={placeholder}
       required={required}
-      className={`w-full px-4 py-2 border ${error ? 'border-red-500' : 'border-gray-300'} rounded-md focus:outline-none focus:ring-2 focus:ring-estate-blue focus:border-transparent transition-all`}
+      className={`w-full px-4 py-2 border ${error ? 'border-red-500' : 'border-gray-300'} rounded-md focus:outline-none focus:ring-2 ${borderColor || "focus:ring-estate-blue"} focus:border-transparent transition-all`}
     />
     {error && <p className="text-red-500 text-sm mt-1">{error}</p>}
   </div>
 );
 
-const FormSelect = ({ label, name, options, error }) => (
+const FormSelect = ({ label, name, options, error, borderColor }) => (
   <div>
     <label htmlFor={name} className="block text-sm font-medium text-estate-darkText mb-2">
       {label}
@@ -240,7 +251,7 @@ const FormSelect = ({ label, name, options, error }) => (
     <select
       id={name}
       name={name}
-      className={`w-full px-4 py-2 border ${error ? 'border-red-500' : 'border-gray-300'} rounded-md focus:outline-none focus:ring-2 focus:ring-estate-blue focus:border-transparent transition-all`}
+      className={`w-full px-4 py-2 border ${error ? 'border-red-500' : 'border-gray-300'} rounded-md focus:outline-none focus:ring-2 ${borderColor || "focus:ring-estate-blue"} focus:border-transparent transition-all`}
     >
       {options.map((option) => (
         <option key={option.value} value={option.value}>
@@ -252,7 +263,7 @@ const FormSelect = ({ label, name, options, error }) => (
   </div>
 );
 
-const FormTextarea = ({ label, name, placeholder, rows = 4, error }) => (
+const FormTextarea = ({ label, name, placeholder, rows = 4, error, borderColor }) => (
   <div>
     <label htmlFor={name} className="block text-sm font-medium text-estate-darkText mb-2">
       {label}
@@ -262,7 +273,7 @@ const FormTextarea = ({ label, name, placeholder, rows = 4, error }) => (
       name={name}
       rows={rows}
       placeholder={placeholder}
-      className={`w-full px-4 py-2 border ${error ? 'border-red-500' : 'border-gray-300'} rounded-md focus:outline-none focus:ring-2 focus:ring-estate-blue focus:border-transparent transition-all`}
+      className={`w-full px-4 py-2 border ${error ? 'border-red-500' : 'border-gray-300'} rounded-md focus:outline-none focus:ring-2 ${borderColor || "focus:ring-estate-blue"} focus:border-transparent transition-all`}
     />
     {error && <p className="text-red-500 text-sm mt-1">{error}</p>}
   </div>

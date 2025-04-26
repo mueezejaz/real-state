@@ -1,49 +1,50 @@
 import { motion } from "framer-motion";
-import { Star, ChevronLeft, ChevronRight } from "lucide-react";
+import { Star, ChevronLeft, ChevronRight, User } from "lucide-react";
 import { useState, useEffect } from "react";
 
 const reviews = [
   {
     id: 1,
-    name: "Sarah Johnson",
-    title: "Home Buyer",
-    image: "https://randomuser.me/api/portraits/women/1.jpg",
+    name: "فاطمة الزهراء",
+    title: "عميلة سكنية",
+    image: <User className="w-14 h-14 text-estate-blue" />,
     rating: 5,
-    text: "Blue Estate made finding our dream home so easy! Their team was attentive to our needs and found us the perfect property within our budget. We couldn't be happier with our new home."
+    text: "حولت شركة Future Prospects رؤيتنا إلى حقيقة! لقد تجاوز انتباههم للتصميم المستدام وجودة البناء توقعاتنا. منزل أحلامنا الآن هو عرض للهندسة المعمارية الحديثة والميزات الصديقة للبيئة."
   },
   {
     id: 2,
-    name: "Michael Chen",
-    title: "Property Investor",
-    image: "https://randomuser.me/api/portraits/men/2.jpg",
+    name: "سالم الهنائي",
+    title: "مطور تجاري",
+    image: <User className="w-14 h-14 text-estate-blue" />,
     rating: 5,
-    text: "As an investor, I appreciate the market insights and property analysis provided by Blue Estate. They've helped me add several high-performing properties to my portfolio over the last few years."
+    text: "بصفتي مطورًا، أقدر الدقة ونهج Future Prospects المبتكر في كل مشروع. لقد كانت خبرتهم في البناء التجاري لا تقدر بثمن بالنسبة لنمو أعمالنا."
   },
   {
     id: 3,
-    name: "Emily Rodriguez",
-    title: "First-time Seller",
-    image: "https://randomuser.me/api/portraits/women/3.jpg",
+    name: "أمينة البلوشي",
+    title: "بناء لأول مرة",
+    image: <User className="w-14 h-14 text-estate-blue" />,
     rating: 5,
-    text: "Selling my home was a stressful prospect, but Blue Estate handled everything professionally. They got me above asking price and made the whole process smooth and transparent."
+    text: "بناء منزلنا الأول كان يبدو مرهقًا، لكن Future Prospects أرشدتنا في كل خطوة بشفافية واحترافية. كانت النتيجة أفضل مما تصورنا ضمن ميزانيتنا."
   },
   {
     id: 4,
-    name: "David Wilson",
-    title: "Commercial Client",
-    image: "https://randomuser.me/api/portraits/men/4.jpg",
+    name: "خالد الرواحي",
+    title: "مدير مشروع تجزئة",
+    image: <User className="w-14 h-14 text-estate-blue" />,
     rating: 4,
-    text: "The commercial team at Blue Estate helped us find the perfect retail location for our business expansion. Their knowledge of the local market was invaluable to our success."
+    text: "لقد حولت Future Prospects مساحة التجزئة لدينا بشكل كامل، مما أحدث تغييرًا في تجربة العملاء لدينا. كان فهمهم لاحتياجات البيع بالتجزئة الحديثة مثيرًا للإعجاب."
   },
   {
     id: 5,
-    name: "Jessica Thompson",
-    title: "Repeat Customer",
-    image: "https://randomuser.me/api/portraits/women/5.jpg",
+    name: "عائشة الشيبانية",
+    title: "عميلة متكررة",
+    image: <User className="w-14 h-14 text-estate-blue" />,
     rating: 5,
-    text: "I've used Blue Estate for three different property transactions now, and each time has been exceptional. They truly understand my preferences and always deliver outstanding service."
+    text: "لقد عملت مع Future Prospects في ثلاثة مشاريع بناء مختلفة، وكل مرة كانت استثنائية. الجودة المستمرة لديهم وقدرتهم على الوفاء بالمواعيد تجعلهم شريك البناء الموثوق بالنسبة لي."
   }
 ];
+
 
 const ReviewsSection = () => {
   const [currentIndex, setCurrentIndex] = useState(0);
@@ -75,8 +76,11 @@ const ReviewsSection = () => {
   };
 
   return (
-    <section id="reviews" className="py-20 bg-estate-lightGray">
-      <div className="container mx-auto px-4 sm:px-6 lg:px-8">
+    <section id="reviews" className="py-20 bg-estate-lightPurple relative overflow-hidden">
+      {/* Background pattern */}
+      <div className="absolute inset-0 bg-purple-pattern opacity-30" />
+      
+      <div className="container mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
         <motion.div
           initial={{ opacity: 0, y: 20 }}
           whileInView={{ opacity: 1, y: 0 }}
@@ -84,10 +88,12 @@ const ReviewsSection = () => {
           transition={{ duration: 0.6 }}
           className="text-center mb-16"
         >
-          <h2 className="text-3xl md:text-4xl font-bold text-estate-darkText mb-4">Client <span className="text-estate-blue">Reviews</span></h2>
-          <div className="w-24 h-1 bg-estate-blue mx-auto mb-6"></div>
+          <h2 className="text-3xl md:text-4xl font-bold text-estate-darkText mb-4">
+            <span className="text-estate-green">Customer</span> <span className="text-estate-purple">Success</span> <span className="text-estate-blue">Stories</span>
+          </h2>
+          <div className="w-24 h-1 bg-purple-green-blue-gradient mx-auto mb-6"></div>
           <p className="max-w-3xl mx-auto text-estate-darkText/80 text-lg">
-            Don't just take our word for it. Here's what our valued clients have to say about their experience with Blue Estate.
+            Here’s what our clients are saying about their experience with Future Prospects.
           </p>
         </motion.div>
 
@@ -110,7 +116,7 @@ const ReviewsSection = () => {
             <motion.button
               onClick={handlePrev}
               disabled={currentIndex === 0}
-              className={`p-3 rounded-full ${currentIndex === 0 ? 'bg-gray-200 text-gray-400 cursor-not-allowed' : 'bg-estate-blue text-white hover:bg-estate-blue/90'}`}
+              className={`p-3 rounded-full ${currentIndex === 0 ? 'bg-gray-200 text-gray-400 cursor-not-allowed' : 'bg-gradient-to-r from-estate-purple to-estate-blue text-white hover:opacity-90'}`}
               whileHover={currentIndex !== 0 ? { scale: 1.1 } : {}}
               whileTap={currentIndex !== 0 ? { scale: 0.9 } : {}}
             >
@@ -120,7 +126,7 @@ const ReviewsSection = () => {
             <motion.button
               onClick={handleNext}
               disabled={currentIndex >= maxIndex}
-              className={`p-3 rounded-full ${currentIndex >= maxIndex ? 'bg-gray-200 text-gray-400 cursor-not-allowed' : 'bg-estate-blue text-white hover:bg-estate-blue/90'}`}
+              className={`p-3 rounded-full ${currentIndex >= maxIndex ? 'bg-gray-200 text-gray-400 cursor-not-allowed' : 'bg-gradient-to-r from-estate-blue to-estate-green text-white hover:opacity-90'}`}
               whileHover={currentIndex < maxIndex ? { scale: 1.1 } : {}}
               whileTap={currentIndex < maxIndex ? { scale: 0.9 } : {}}
             >
@@ -133,37 +139,46 @@ const ReviewsSection = () => {
   );
 };
 
-const ReviewCard = ({ review, index }) => (
-  <motion.div
-    initial={{ opacity: 0, y: 30 }}
-    whileInView={{ opacity: 1, y: 0 }}
-    viewport={{ once: true }}
-    transition={{ duration: 0.5, delay: 0.1 * (index % 3) }}
-    className="flex-shrink-0 w-80 bg-white p-6 rounded-lg shadow-md"
-  >
-    <div className="flex items-center gap-4 mb-4">
-      <img 
-        src={review.image} 
-        alt={review.name} 
-        className="w-14 h-14 rounded-full object-cover"
-      />
-      <div>
-        <h4 className="font-semibold text-estate-darkText">{review.name}</h4>
-        <p className="text-sm text-estate-darkText/70">{review.title}</p>
+const ReviewCard = ({ review, index }) => {
+  // Alternate card styles
+  const cardStyles = [
+    "border-t-4 border-estate-purple",
+    "border-t-4 border-estate-blue",
+    "border-t-4 border-estate-green"
+  ];
+  
+  const cardStyle = cardStyles[index % cardStyles.length];
+
+  return (
+    <motion.div
+      initial={{ opacity: 0, y: 30 }}
+      whileInView={{ opacity: 1, y: 0 }}
+      viewport={{ once: true }}
+      transition={{ duration: 0.5, delay: 0.1 * (index % 3) }}
+      whileHover={{ y: -10, boxShadow: "0 15px 30px rgba(0,0,0,0.1)" }}
+      className={`flex-shrink-0 w-80 bg-white p-6 rounded-lg shadow-md ${cardStyle} transition-all duration-300`}
+    >
+      <div className="flex items-center gap-4 mb-4">
+        {review.image}
+        <div>
+          <h4 className="font-semibold text-estate-darkText">{review.name}</h4>
+          <p className="text-sm text-estate-darkText/70">{review.title}</p>
+        </div>
       </div>
-    </div>
-    
-    <div className="flex mb-3">
-      {[...Array(5)].map((_, i) => (
-        <Star 
-          key={i} 
-          className={`w-4 h-4 ${i < review.rating ? 'text-estate-orange fill-estate-orange' : 'text-gray-300'}`} 
-        />
-      ))}
-    </div>
-    
-    <p className="text-estate-darkText/80 text-sm">{review.text}</p>
-  </motion.div>
-);
+      
+      <div className="flex mb-3">
+        {[...Array(5)].map((_, i) => (
+          <Star 
+            key={i} 
+            className={`w-4 h-4 ${i < review.rating ? 'text-yellow-500 fill-yellow-500' : 'text-gray-300'}`} 
+          />
+        ))}
+      </div>
+      
+      <p className="text-estate-darkText/80 text-sm italic">{review.text}</p>
+    </motion.div>
+  );
+};
 
 export default ReviewsSection;
+

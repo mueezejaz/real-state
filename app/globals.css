@@ -71,6 +71,14 @@ body {
   );
 }
 
+.bg-light-purple-green-blue-gradient {
+  background: linear-gradient(
+    135deg,
+    var(--color-estate-purple) 0%,
+    var(--color-estate-green) 50%,
+    var(--color-estate-blue) 100%
+  );
+}
 /* Pattern backgrounds */
 .bg-purple-pattern {
   background-color: var(--color-estate-lightPurple);
