@@ -1,13 +1,13 @@
 import { motion } from "framer-motion";
-import { Star, ChevronLeft, ChevronRight, User } from "lucide-react";
+import { Star, ChevronLeft, ChevronRight } from "lucide-react";
 import { useState, useEffect } from "react";
 
 const reviews = [
   {
     id: 1,
-    name: "فاطمة الزهراء",
-    title: "عميلة سكنية",
-    image: <User className="w-14 h-14 text-estate-blue" />,
+    name: "أحمد الزهراني",
+    title: "عميل سكني",
+    image: "./persons/1.webp",
     rating: 5,
     text: "حولت شركة Future Prospects رؤيتنا إلى حقيقة! لقد تجاوز انتباههم للتصميم المستدام وجودة البناء توقعاتنا. منزل أحلامنا الآن هو عرض للهندسة المعمارية الحديثة والميزات الصديقة للبيئة."
   },
@@ -15,15 +15,15 @@ const reviews = [
     id: 2,
     name: "سالم الهنائي",
     title: "مطور تجاري",
-    image: <User className="w-14 h-14 text-estate-blue" />,
+    image: "./persons/2.webp",
     rating: 5,
     text: "بصفتي مطورًا، أقدر الدقة ونهج Future Prospects المبتكر في كل مشروع. لقد كانت خبرتهم في البناء التجاري لا تقدر بثمن بالنسبة لنمو أعمالنا."
   },
   {
     id: 3,
-    name: "أمينة البلوشي",
+    name: "محمد البلوشي",
     title: "بناء لأول مرة",
-    image: <User className="w-14 h-14 text-estate-blue" />,
+    image: "./persons/3.webp",
     rating: 5,
     text: "بناء منزلنا الأول كان يبدو مرهقًا، لكن Future Prospects أرشدتنا في كل خطوة بشفافية واحترافية. كانت النتيجة أفضل مما تصورنا ضمن ميزانيتنا."
   },
@@ -31,15 +31,15 @@ const reviews = [
     id: 4,
     name: "خالد الرواحي",
     title: "مدير مشروع تجزئة",
-    image: <User className="w-14 h-14 text-estate-blue" />,
+    image: "./persons/4.webp",
     rating: 4,
     text: "لقد حولت Future Prospects مساحة التجزئة لدينا بشكل كامل، مما أحدث تغييرًا في تجربة العملاء لدينا. كان فهمهم لاحتياجات البيع بالتجزئة الحديثة مثيرًا للإعجاب."
   },
   {
     id: 5,
-    name: "عائشة الشيبانية",
-    title: "عميلة متكررة",
-    image: <User className="w-14 h-14 text-estate-blue" />,
+    name: "ناصر الشيباني",
+    title: "عميل متكرر",
+    image: "./persons/5.webp",
     rating: 5,
     text: "لقد عملت مع Future Prospects في ثلاثة مشاريع بناء مختلفة، وكل مرة كانت استثنائية. الجودة المستمرة لديهم وقدرتهم على الوفاء بالمواعيد تجعلهم شريك البناء الموثوق بالنسبة لي."
   }
@@ -93,7 +93,7 @@ const ReviewsSection = () => {
           </h2>
           <div className="w-24 h-1 bg-purple-green-blue-gradient mx-auto mb-6"></div>
           <p className="max-w-3xl mx-auto text-estate-darkText/80 text-lg">
-            Here’s what our clients are saying about their experience with Future Prospects.
+            Here's what our clients are saying about their experience with Future Prospects.
           </p>
         </motion.div>
 
@@ -159,7 +159,13 @@ const ReviewCard = ({ review, index }) => {
       className={`flex-shrink-0 w-80 bg-white p-6 rounded-lg shadow-md ${cardStyle} transition-all duration-300`}
     >
       <div className="flex items-center gap-4 mb-4">
-        {review.image}
+        <div className="w-14 h-14 rounded-full overflow-hidden bg-gray-100 flex items-center justify-center">
+          <img 
+            src={review.image} 
+            alt={`Avatar of ${review.name}`} 
+            className="w-full h-full object-cover"
+          />
+        </div>
         <div>
           <h4 className="font-semibold text-estate-darkText">{review.name}</h4>
           <p className="text-sm text-estate-darkText/70">{review.title}</p>
