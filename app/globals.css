@@ -1,54 +1,5 @@
 @import "tailwindcss";
 
-:root {
-  --background: #ffffff;
-  --foreground: #171717;
-}
-#root {
-  max-width: 1280px;
-  margin: 0 auto;
-  padding: 2rem;
-  text-align: center;
-}
-
-.logo {
-  height: 6em;
-  padding: 1.5em;
-  will-change: filter;
-  transition: filter 300ms;
-}
-.logo:hover {
-  filter: drop-shadow(0 0 2em #646cffaa);
-}
-.logo.react:hover {
-  filter: drop-shadow(0 0 2em #61dafbaa);
-}
-
-@keyframes logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
-}
-
-@media (prefers-reduced-motion: no-preference) {
-  a:nth-of-type(2) .logo {
-    animation: logo-spin infinite 20s linear;
-  }
-}
-
-.card {
-  padding: 2em;
-}
-
-.read-the-docs {
-  color: #888;
-}
-@import "tailwindcss";
-
-
 
 @theme {
   --radius: 0.5rem;
@@ -71,14 +22,20 @@
   --color-popover-foreground: hsl(var(--popover-foreground));
   --color-card: hsl(var(--card));
   --color-card-foreground: hsl(var(--card-foreground));
-  --color-estate-blue: #00AEEF;
-  --color-estate-purple: #3F2D87;
-  --color-estate-green: #2C6A3C;
-  --color-estate-deepGreen: #176D3F;
-  --color-estate-orange: #361a93f0;
-  --color-estate-lightGray: #F2F2F2;
-  --color-estate-darkText: #4D4D4D;
+  
+  /* Updated color scheme with purple, green, and blue */
+  --background: #ffffff;
+  --foreground: #171717;
+  --color-estate-blue: #2563EB;     /* Bright blue */
+  --color-estate-purple: #7C3AED;   /* Vibrant purple */
+  --color-estate-green: #10B981;    /* Emerald green */
+  --color-estate-deepGreen: #065F46; /* Dark green */
+  --color-estate-lightGray: #EFF6FF; /* Light blue-tinted gray */
+  --color-estate-darkText: #1F2937;
   --color-estate-white: #FFFFFF;
+  --color-estate-lightPurple: #EDE9FE; /* Light purple background */
+  --color-estate-lightGreen: #ECFDF5; /* Light green background */
+  
   --color-sidebar: hsl(var(--sidebar-background));
   --color-sidebar-foreground: hsl(var(--sidebar-foreground));
   --color-sidebar-primary: hsl(var(--sidebar-primary));
@@ -89,7 +46,40 @@
   --color-sidebar-ring: hsl(var(--sidebar-ring));
 }
 
-
 body {
   font-family: Arial, Helvetica, sans-serif;
+}
+
+/* Gradient backgrounds */
+.bg-purple-green-gradient {
+  background: linear-gradient(135deg, var(--color-estate-purple) 0%, var(--color-estate-green) 100%);
+}
+
+.bg-blue-purple-gradient {
+  background: linear-gradient(135deg, var(--color-estate-blue) 0%, var(--color-estate-purple) 100%);
+}
+
+.bg-green-blue-gradient {
+  background: linear-gradient(135deg, var(--color-estate-green) 0%, var(--color-estate-blue) 100%);
+}
+.bg-purple-green-blue-gradient {
+  background: linear-gradient(
+    135deg,
+    var(--color-estate-purple) 0%,
+    var(--color-estate-green) 50%,
+    var(--color-estate-blue) 100%
+  );
+}
+
+/* Pattern backgrounds */
+.bg-purple-pattern {
+  background-color: var(--color-estate-lightPurple);
+  background-image: radial-gradient(var(--color-estate-purple) 0.5px, transparent 0.5px);
+  background-size: 15px 15px;
+}
+
+.bg-green-pattern {
+  background-color: var(--color-estate-lightGreen);
+  background-image: radial-gradient(var(--color-estate-green) 0.5px, transparent 0.5px);
+  background-size: 15px 15px;
 }
