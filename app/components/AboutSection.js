@@ -32,7 +32,7 @@ const AboutSection = () => {
           >
             <div className="rounded-lg overflow-hidden shadow-xl">
               <img 
-                src="https://images.unsplash.com/photo-1560520031-3a4dc4e9de0c?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1373&q=80" 
+                src="./tower.webp" 
                 alt="Construction Team" 
                 className="w-full h-auto object-cover"
               />
