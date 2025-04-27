@@ -89,7 +89,7 @@ const ReviewsSection = () => {
           className="text-center mb-16"
         >
           <h2 className="text-3xl md:text-4xl font-bold text-estate-darkText mb-4">
-            <span className="text-estate-green">Customer</span> <span className="text-estate-purple">Success</span> <span className="text-estate-blue">Stories</span>
+            Customer Success <span className="text-estate-blue">Stories</span>
           </h2>
           <div className="w-24 h-1 bg-purple-green-blue-gradient mx-auto mb-6"></div>
           <p className="max-w-3xl mx-auto text-estate-darkText/80 text-lg">

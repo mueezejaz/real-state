@@ -40,7 +40,7 @@ const WhyChooseSection = () => {
           className="text-center mb-16"
         >
           <h2 className="text-3xl md:text-4xl font-bold text-estate-darkText mb-4">
-            Why <span className="text-estate-green">Choose</span> <span className="text-estate-purple">Future</span> <span className="text-estate-blue">Prospects</span>
+            Why Choose Future <span className="text-estate-blue">Prospects</span>
           </h2>
           <div className="w-24 h-1 bg-purple-green-gradient mx-auto mb-6"></div>
           <p className="max-w-3xl mx-auto text-estate-darkText/80 text-lg">

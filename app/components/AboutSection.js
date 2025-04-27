@@ -3,7 +3,7 @@ import { Home, Award, Clock, Shield } from "lucide-react";
 
 const AboutSection = () => {
   return (
-    <section id="about" className="py-20 bg-estate-lightPurple">
+    <section id="about" className="py-20 overflow-hidden bg-estate-lightPurple">
       <div className="container mx-auto px-4  sm:px-6 lg:px-8">
         <motion.div
           initial={{ opacity: 0, y: 20 }}
@@ -13,7 +13,7 @@ const AboutSection = () => {
           className="text-center mb-16"
         >
           <h2 className="text-3xl md:text-4xl font-bold text-estate-darkText mb-4">
-            About <span className="text-estate-purple">Future</span> <span className="text-estate-blue">Prospects</span>
+            About <span className="text-estate-darkText">Future</span> <span className="text-estate-blue">Prospects</span>
           </h2>
           <div className="w-24 h-1 bg-green-blue-gradient mx-auto mb-6"></div>
           <p className="max-w-3xl mx-auto text-estate-darkText/80 text-lg">
@@ -56,7 +56,7 @@ const AboutSection = () => {
             viewport={{ once: true, margin: "-100px" }}
             transition={{ duration: 0.6 }}
           >
-            <h3 className="text-2xl font-bold text-estate-purple mb-6">
+            <h3 className="text-2xl font-bold text-estate-darkText mb-6">
               Building Futures, One Project at a Time
             </h3>
 
