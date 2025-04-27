@@ -53,7 +53,7 @@ const ContactSection = () => {
           className="text-center mb-16"
         >
           <h2 className="text-3xl md:text-4xl font-bold text-estate-darkText mb-4">
-            Get In <span className="text-estate-blue">Touch</span> <span className="text-estate-purple">With</span> <span className="text-estate-green">Us</span>
+            Get In <span className="text-estate-blue">Touch</span> With Us
           </h2>
           <div className="w-24 h-1 bg-purple-green-blue-gradient mx-auto mb-6"></div>
           <p className="max-w-3xl mx-auto text-estate-darkText/80 text-lg">
