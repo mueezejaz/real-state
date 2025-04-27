@@ -22,13 +22,17 @@
   --color-popover-foreground: hsl(var(--popover-foreground));
   --color-card: hsl(var(--card));
   --color-card-foreground: hsl(var(--card-foreground));
-  
+  --breakpoint-sm: 40rem;    /* Equivalent to 640px */
+  --breakpoint-md: 48rem;    /* Equivalent to 768px */
+  --breakpoint-lg: 64rem;    /* Equivalent to 1024px */
+  --breakpoint-xl: 80rem;    /* Equivalent to 1280px */
+  --breakpoint-2xl: 96rem; 
   /* Updated color scheme with purple, green, and blue */
   --background: #ffffff;
   --foreground: #171717;
-  --color-estate-blue: #2563EB;     /* Bright blue */
+  --color-estate-blue: #00aef1;     /* Bright blue */
   --color-estate-purple: #7C3AED;   /* Vibrant purple */
-  --color-estate-green: #10B981;    /* Emerald green */
+  --color-estate-green: #027943;    /* Emerald green */
   --color-estate-deepGreen: #065F46; /* Dark green */
   --color-estate-lightGray: #EFF6FF; /* Light blue-tinted gray */
   --color-estate-darkText: #1F2937;
