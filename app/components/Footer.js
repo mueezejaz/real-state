@@ -14,7 +14,7 @@ const Footer = () => {
             transition={{ duration: 0.5 }}
           >
             <div className="mb-4">
-              <img src="./real.png"   alt="Blue Estate Logo" className="h-[200px] w-[170px]" />
+              <img src="./real.png" alt="Blue Estate Logo" className="h-[200px] w-[170px]" />
             </div>
             <p className="text-estate-darkText/70 mb-4">
               Your premier real estate agency committed to helping you find your perfect property with professional service and local expertise.
@@ -69,20 +69,34 @@ const Footer = () => {
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
             transition={{ duration: 0.5, delay: 0.3 }}
+            className="space-y-4"
           >
             <h3 className="text-lg font-semibold text-estate-darkText mb-4">Contact Us</h3>
-            <ul className="space-y-3">
-              <li className="flex items-start gap-3">
-                <MapPin className="w-5 h-5 text-estate-blue mt-0.5" />
-                <span className="text-estate-darkText/70">123 Real Estate Avenue, New York, NY 10001</span>
-              </li>
+            
+            {/* Muscat Office */}
+            <div>
+              <h4 className="font-medium text-estate-darkText mb-2">Muscat Office:</h4>
+              <ul className="space-y-2">
+                <li className="flex items-start gap-3">
+                  <MapPin className="w-5 h-5 text-estate-purple mt-0.5" />
+                  <span className="text-estate-darkText/70">
+                    Office 1/578, Block No: 262,<br />
+                    Way No: 6210, Azaiba South,<br />
+                    Muscat, Oman
+                  </span>
+                </li>
+              </ul>
+            </div>
+            
+            {/* Contact Information */}
+            <ul className="space-y-3 mt-2">
               <li className="flex items-center gap-3">
                 <Phone className="w-5 h-5 text-estate-blue" />
-                <span className="text-estate-darkText/70">(123) 456-7890</span>
+                <span className="text-estate-darkText/70">968-79995329</span>
               </li>
               <li className="flex items-center gap-3">
                 <Mail className="w-5 h-5 text-estate-blue" />
-                <span className="text-estate-darkText/70">info@blueestate.com</span>
+                <span className="text-estate-darkText/70">syed@futureprospectsmodern.com</span>
               </li>
             </ul>
           </motion.div>
@@ -93,7 +107,7 @@ const Footer = () => {
         {/* Bottom Footer */}
         <div className="flex flex-col sm:flex-row justify-between items-center">
           <p className="text-estate-darkText/70 text-sm mb-4 sm:mb-0">
-            © {new Date().getFullYear()} Blue Estate. All rights reserved.
+            © {new Date().getFullYear()} Future Prospects Modern Business LLC. All rights reserved.
           </p>
           <div className="flex space-x-6 text-sm">
             <a href="#" className="text-estate-darkText/70 hover:text-estate-blue transition-colors">Privacy Policy</a>

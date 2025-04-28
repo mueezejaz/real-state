@@ -57,7 +57,7 @@ const ContactSection = () => {
           </h2>
           <div className="w-24 h-1 bg-purple-green-blue-gradient mx-auto mb-6"></div>
           <p className="max-w-3xl mx-auto text-estate-darkText/80 text-lg">
-            Want to know more about our construction, fiber optic, OSP, or civil works? Reach out to Future Prospects Modern Business LLC — we’re here to help you build with quality, efficiency, and innovation.
+            Want to know more about our construction, fiber optic, OSP, or civil works? Reach out to Future Prospects Modern Business LLC — we're here to help you build with quality, efficiency, and innovation.
           </p>
         </motion.div>
 
@@ -76,23 +76,32 @@ const ContactSection = () => {
               <ContactInfo 
                 icon={<Phone className="text-estate-blue" />}
                 title="Phone"
-                details={["+971 50 123 4567", "+971 55 987 6543"]}
+                details={["968-79995329"]}
                 bgColor="bg-estate-lightBlue"
               />
               
               <ContactInfo 
                 icon={<Mail className="text-estate-green" />}
                 title="Email"
-                details={["info@futureprospectsllc.com", "projects@futureprospectsllc.com"]}
+                details={["syed@futureprospectsmodern.com"]}
                 bgColor="bg-estate-lightGreen"
               />
               
-              <ContactInfo 
-                icon={<MapPin className="text-estate-purple" />}
-                title="Office"
-                details={["Business Bay, Dubai", "United Arab Emirates"]}
-                bgColor="bg-estate-lightPurple"
-              />
+              <div className="space-y-6">
+                
+                <ContactInfo 
+                  icon={<MapPin className="text-estate-blue" />}
+                  title="Office Address"
+                  details={[
+                    "Office Address: 1/578",
+                    "Block No: 262",
+                    "Way No: 6210",
+                    "Azaiba South, Muscat",
+                    "Oman"
+                  ]}
+                  bgColor="bg-estate-lightBlue"
+                />
+              </div>
             </div>
             
             <div className="mt-10 p-6 bg-blue-purple-gradient rounded-lg text-white">
