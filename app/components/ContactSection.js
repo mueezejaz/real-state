@@ -1,7 +1,8 @@
 import { motion } from "framer-motion";
-import { Phone, Mail, MapPin, Send } from "lucide-react";
+import { Phone, Mail, MapPin, Send, Loader2 } from "lucide-react";
 import { useState } from "react";
 import { z } from "zod";
+import Notification from "./Notification";
 
 // Define Zod schema for form validation
 const contactFormSchema = z.object({
@@ -15,21 +16,67 @@ const contactFormSchema = z.object({
 
 const ContactSection = () => {
   const [formErrors, setFormErrors] = useState({});
+  const [isSubmitting, setIsSubmitting] = useState(false);
+  const [notification, setNotification] = useState({
+    type: "",
+    message: "",
+    isVisible: false
+  });
 
-  const handleSubmit = (e) => {
+  const showNotification = (type, message) => {
+    setNotification({
+      type,
+      message,
+      isVisible: true
+    });
+
+    // Automatically hide notification after 5 seconds
+    setTimeout(() => {
+      setNotification(prev => ({ ...prev, isVisible: false }));
+    }, 5000);
+  };
+
+  const handleCloseNotification = () => {
+    setNotification(prev => ({ ...prev, isVisible: false }));
+  };
+
+  const handleSubmit = async (e) => {
     e.preventDefault();
     
     const formData = new FormData(e.target);
     const formValues = Object.fromEntries(formData.entries());
     
-    console.log("Form Data:", formValues);
-    
     try {
+      // Validate the form data
       const validatedData = contactFormSchema.parse(formValues);
-      console.log("Validated Data:", validatedData);
       setFormErrors({});
-      alert("Form submitted successfully!");
+      
+      // Set submitting state to show loading indicator
+      setIsSubmitting(true);
+      
+      // Send the form data to the API endpoint
+      const response = await fetch('/api/contact', {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json',
+        },
+        body: JSON.stringify(validatedData),
+      });
+      
+      const data = await response.json();
+      
+      if (response.ok) {
+        // Reset the form
+        e.target.reset();
+        
+        // Show success notification
+        showNotification("success", "Your message has been sent successfully! We'll get back to you soon.");
+      } else {
+        // Show error notification
+        showNotification("error", data.error || "Failed to send your message. Please try again later.");
+      }
     } catch (error) {
+      // Handle validation errors
       if (error.errors) {
         const errors = {};
         error.errors.forEach((err) => {
@@ -37,14 +84,26 @@ const ContactSection = () => {
           errors[path] = err.message;
         });
         setFormErrors(errors);
-        console.error("Validation errors:", errors);
+      } else {
+        // Show generic error notification
+        showNotification("error", "An unexpected error occurred. Please try again later.");
       }
+    } finally {
+      setIsSubmitting(false);
     }
   };
 
   return (
     <section id="contact" className="py-20 bg-gradient-to-br from-estate-lightPurple via-white to-estate-lightGreen">
       <div className="container mx-auto px-4 sm:px-6 lg:px-8">
+        {/* Notification Component */}
+        <Notification
+          type={notification.type}
+          message={notification.message}
+          isVisible={notification.isVisible}
+          onClose={handleCloseNotification}
+        />
+
         <motion.div
           initial={{ opacity: 0, y: 20 }}
           whileInView={{ opacity: 1, y: 0 }}
@@ -203,12 +262,22 @@ const ContactSection = () => {
               
               <motion.button
                 type="submit"
-                className="bg-gradient-to-r from-estate-purple via-estate-blue to-estate-green text-white px-8 py-3 rounded-md font-medium w-full flex items-center justify-center gap-2 hover:opacity-90 transition-colors"
-                whileHover={{ scale: 1.02 }}
-                whileTap={{ scale: 0.98 }}
+                disabled={isSubmitting}
+                className="bg-gradient-to-r from-estate-purple via-estate-blue to-estate-green text-white px-8 py-3 rounded-md font-medium w-full flex items-center justify-center gap-2 hover:opacity-90 transition-colors disabled:opacity-70"
+                whileHover={{ scale: isSubmitting ? 1 : 1.02 }}
+                whileTap={{ scale: isSubmitting ? 1 : 0.98 }}
               >
-                <Send className="w-4 h-4" />
-                Send Message
+                {isSubmitting ? (
+                  <>
+                    <Loader2 className="w-4 h-4 animate-spin" />
+                    Sending...
+                  </>
+                ) : (
+                  <>
+                    <Send className="w-4 h-4" />
+                    Send Message
+                  </>
+                )}
               </motion.button>
             </form>
           </motion.div>
