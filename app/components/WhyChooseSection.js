@@ -30,7 +30,7 @@ const WhyChooseSection = () => {
   ];
 
   return (
-    <section id="why-choose" className="py-20 bg-estate-lightGreen">
+    <section id="why-choose" className="py-20 bg-estate-skyblue">
       <div className="container mx-auto px-4 sm:px-6 lg:px-8">
         <motion.div
           initial={{ opacity: 0, y: 20 }}
@@ -44,7 +44,7 @@ const WhyChooseSection = () => {
           </h2>
           <div className="w-24 h-1  mx-auto mb-6"></div>
           <p className="max-w-3xl mx-auto text-estate-darkText/80 text-lg">
-            At Future Prospects, we go beyond construction. We create value,
+            At Future Prospects, We create value,
             trust, and sustainable growth — building a legacy that lasts.
           </p>
         </motion.div>

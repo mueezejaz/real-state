@@ -116,7 +116,7 @@ const ContactSection = () => {
           </h2>
           <div className="w-24 h-1 bg-estate-darkText mx-auto mb-6"></div>
           <p className="max-w-3xl mx-auto text-estate-darkText/80 text-lg">
-            Want to know more about our construction, fiber optic, OSP, or civil works? Reach out to Future Prospects Modern Business LLC — we're here to help you build with quality, efficiency, and innovation.
+            Want to know more about our Telecommunication Services, OSP, or civil maintenance work? Reach out to Future Prospects Modern Business LLC — we're here to help you build with quality, efficiency, and innovation.
           </p>
         </motion.div>
 
@@ -167,15 +167,11 @@ const ContactSection = () => {
               <h4 className="text-lg font-semibold mb-4">Office Hours</h4>
               <div className="space-y-2">
                 <p className="flex justify-between">
-                  <span>Monday - Friday:</span>
-                  <span>9:00 AM - 6:00 PM</span>
+                  <span>Sunday - Thursday:</span>
+                  <span>8:00 AM - 6:00 PM</span>
                 </p>
                 <p className="flex justify-between">
-                  <span>Saturday:</span>
-                  <span>10:00 AM - 4:00 PM</span>
-                </p>
-                <p className="flex justify-between">
-                  <span>Sunday:</span>
+                  <span>Friday and Saturday:</span>
                   <span>Closed</span>
                 </p>
               </div>

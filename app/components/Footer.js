@@ -19,9 +19,7 @@ const Footer = () => {
                 <img src="./real.png" alt="Blue Estate Logo" className="h-[200px] w-[170px]" />
               </div>
             </div>
-            <p className="text-estate-white/80 mb-4">
-              Your premier real estate agency committed to helping you find your perfect property with professional service and local expertise.
-            </p>
+          
             <div className="flex space-x-4">
               <SocialIcon icon={<Facebook />} href="#" />
               <SocialIcon icon={<Twitter />} href="#" />
@@ -57,12 +55,12 @@ const Footer = () => {
           >
             <h3 className="text-lg font-semibold text-estate-white mb-4">Our Services</h3>
             <ul className="space-y-2">
-              <FooterLink href="#" text="Property Buying" />
-              <FooterLink href="#" text="Property Selling" />
-              <FooterLink href="#" text="Property Renting" />
-              <FooterLink href="#" text="Market Analysis" />
+              <FooterLink href="#" text="Telephony" />
+              <FooterLink href="#" text="Wireless Communication" />
+              <FooterLink href="#" text="Optical Communication" />
+              <FooterLink href="#" text="Data Communication and Networking" />
               <FooterLink href="#" text="Investment Consulting" />
-              <FooterLink href="#" text="Property Management" />
+              <FooterLink href="#" text="fiber optic installation" />
             </ul>
           </motion.div>
           

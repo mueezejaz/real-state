@@ -68,7 +68,7 @@ const HeroSection = () => {
             animate="visible"
             variants={scaleIn}
           >
-            <div className="w-24 sm:w-32 md:w-40">
+            <div className="w-20 sm:w-27 md:w-32">
               <img 
                 src="./real.png" 
                 alt="Company Logo" 
