@@ -129,7 +129,6 @@ const HeroSection = () => {
         animate={{ y: 0, opacity: 1 }}
         transition={{ delay: 1, duration: 0.5 }}
       >
-        <span className="text-xs sm:text-sm text-white">www.futureprospectsmodern.com</span>
       </motion.div>
     </div>
   );

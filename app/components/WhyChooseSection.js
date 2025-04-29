@@ -40,9 +40,9 @@ const WhyChooseSection = () => {
           className="text-center mb-16"
         >
           <h2 className="text-3xl md:text-4xl font-bold text-estate-darkText mb-4">
-            Why Choose Future <span className="text-estate-blue">Prospects</span>
+            Why Choose Future Prospects
           </h2>
-          <div className="w-24 h-1 bg-purple-green-gradient mx-auto mb-6"></div>
+          <div className="w-24 h-1  mx-auto mb-6"></div>
           <p className="max-w-3xl mx-auto text-estate-darkText/80 text-lg">
             At Future Prospects, we go beyond construction. We create value,
             trust, and sustainable growth — building a legacy that lasts.
@@ -70,7 +70,7 @@ const WhyChooseSection = () => {
           className="mt-16 text-center"
         >
           <motion.button
-            className="bg-purple-green-gradient text-white px-8 py-3 rounded-md font-medium hover:opacity-90 transition-opacity"
+            className="bg-estate-blue text-white px-8 py-3 rounded-md font-medium hover:opacity-90 transition-opacity"
             whileHover={{ scale: 1.03 }}
             whileTap={{ scale: 0.98 }}
           >

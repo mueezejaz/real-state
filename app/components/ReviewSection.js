@@ -89,9 +89,9 @@ const ReviewsSection = () => {
           className="text-center mb-16"
         >
           <h2 className="text-3xl md:text-4xl font-bold text-estate-darkText mb-4">
-            Customer Success <span className="text-estate-blue">Stories</span>
+            Customer Success Stories
           </h2>
-          <div className="w-24 h-1 bg-purple-green-blue-gradient mx-auto mb-6"></div>
+          <div className="w-24 h-1 bg-estate-darkText  mx-auto mb-6"></div>
           <p className="max-w-3xl mx-auto text-estate-darkText/80 text-lg">
             Here's what our clients are saying about their experience with Future Prospects.
           </p>

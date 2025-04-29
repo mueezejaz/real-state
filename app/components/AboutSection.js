@@ -13,11 +13,11 @@ const AboutSection = () => {
           className="text-center mb-16"
         >
           <h2 className="text-3xl md:text-4xl font-bold text-estate-darkText mb-4">
-            About <span className="text-estate-darkText">Future</span> <span className="text-estate-blue">Prospects</span>
+            About Future Prospects
           </h2>
-          <div className="w-24 h-1 bg-green-blue-gradient mx-auto mb-6"></div>
+          <div className="w-24 h-1 bg-estate-darkText mx-auto mb-6"></div>
           <p className="max-w-3xl mx-auto text-estate-darkText/80 text-lg">
-            Future Prospects is a dynamic and forward-thinking construction company committed to building more than just structures — we build futures. With a strong foundation in quality, safety, and innovation, we deliver projects that stand the test of time while shaping the skylines of tomorrow.
+Future Prospects Mordent Business LLC is a Growing provider OSP Works (OMANTEL, OREDOO) Tower Construction (Civil) Road Maintenance Works OBB Fiber Optical Works (Projects & Last Mile) new Installation and Maintenance (Civil) Water line Civil Works Building Contracting & Construction Works (Commercial & Residential) With a strong commitment to quality, efficiency, and innovation, we deliver endto-end solutions for infrastructure projects.
           </p>
         </motion.div>
 

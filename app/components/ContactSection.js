@@ -112,9 +112,9 @@ const ContactSection = () => {
           className="text-center mb-16"
         >
           <h2 className="text-3xl md:text-4xl font-bold text-estate-darkText mb-4">
-            Get In <span className="text-estate-blue">Touch</span> With Us
+            Get In Touch With Us
           </h2>
-          <div className="w-24 h-1 bg-purple-green-blue-gradient mx-auto mb-6"></div>
+          <div className="w-24 h-1 bg-estate-darkText mx-auto mb-6"></div>
           <p className="max-w-3xl mx-auto text-estate-darkText/80 text-lg">
             Want to know more about our construction, fiber optic, OSP, or civil works? Reach out to Future Prospects Modern Business LLC — we're here to help you build with quality, efficiency, and innovation.
           </p>
@@ -135,7 +135,7 @@ const ContactSection = () => {
               <ContactInfo 
                 icon={<Phone className="text-estate-blue" />}
                 title="Phone"
-                details={["968-79995329"]}
+                details={["+968-79995329"]}
                 bgColor="bg-estate-lightBlue"
               />
               
@@ -163,7 +163,7 @@ const ContactSection = () => {
               </div>
             </div>
             
-            <div className="mt-10 p-6 bg-blue-purple-gradient rounded-lg text-white">
+            <div className="mt-10 p-6 bg-estate-blue rounded-lg text-white">
               <h4 className="text-lg font-semibold mb-4">Office Hours</h4>
               <div className="space-y-2">
                 <p className="flex justify-between">
@@ -263,7 +263,7 @@ const ContactSection = () => {
               <motion.button
                 type="submit"
                 disabled={isSubmitting}
-                className="bg-gradient-to-r from-estate-purple via-estate-blue to-estate-green text-white px-8 py-3 rounded-md font-medium w-full flex items-center justify-center gap-2 hover:opacity-90 transition-colors disabled:opacity-70"
+                className="bg-estate-blue text-white px-8 py-3 rounded-md font-medium w-full flex items-center justify-center gap-2 hover:opacity-90 transition-colors disabled:opacity-70"
                 whileHover={{ scale: isSubmitting ? 1 : 1.02 }}
                 whileTap={{ scale: isSubmitting ? 1 : 0.98 }}
               >
