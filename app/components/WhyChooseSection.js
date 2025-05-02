@@ -1,5 +1,6 @@
 import { motion } from "framer-motion";
 import { Building2, Leaf, Lightbulb, Handshake } from "lucide-react";
+import Link from "next/link";
 
 const WhyChooseSection = () => {
   const reasons = [
@@ -69,13 +70,15 @@ const WhyChooseSection = () => {
           transition={{ duration: 0.6, delay: 0.4 }}
           className="mt-16 text-center"
         >
-          <motion.button
-            className="bg-estate-blue text-white px-8 py-3 rounded-md font-medium hover:opacity-90 transition-opacity"
-            whileHover={{ scale: 1.03 }}
-            whileTap={{ scale: 0.98 }}
-          >
-            Learn More About Our Services
-          </motion.button>
+          <Link href="/services">
+            <motion.button
+              className="bg-estate-blue text-white px-8 py-3 rounded-md font-medium hover:opacity-90 transition-opacity"
+              whileHover={{ scale: 1.03 }}
+              whileTap={{ scale: 0.98 }}
+            >
+              Learn More About Our Services
+            </motion.button>
+          </Link>
         </motion.div>
       </div>
     </section>
