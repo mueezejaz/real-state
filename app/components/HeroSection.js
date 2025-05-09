@@ -59,8 +59,8 @@ const HeroSection = () => {
       </motion.div>
       
       {/* Content overlay */}
-      <div className="relative z-20 p-4 sm:p-6 md:p-8 max-w-5xl mx-auto h-full">
-        <div className="flex flex-col justify-start items-start pt-15 sm:pt-12 md:pt-16 max-w-xs sm:max-w-sm md:max-w-lg">
+      <div className="relative z-20 p-4 sm:p-6 md:px-12 md:py-8 max-w-5xl mx-auto h-full">
+        <div className="flex flex-col justify-start items-start pt-15 sm:pt-12 md:pt-16 max-w-xs sm:max-w-sm md:max-w-lg md:ml-0 sm:ml-18">
           {/* Logo above heading with scale animation */}
           <motion.div 
             className="mb-4 sm:mb-6"
@@ -79,7 +79,7 @@ const HeroSection = () => {
           
           {/* Main Heading with staggered text animation */}
           <motion.h1 
-            className="text-3xl sm:text-4xl md:text-5xl font-bold leading-tight sm:leading-snug md:leading-normal"
+            className="text-3xl sm:text-4xl md:text-5xl font-bold leading-tight sm:leading-snug md:leading-tight"
             initial="hidden"
             animate="visible"
             variants={staggerText}
@@ -135,5 +135,7 @@ const HeroSection = () => {
 };
 
 export default HeroSection;
+
+
 
 
