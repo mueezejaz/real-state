@@ -1,29 +1,29 @@
 import { motion } from "framer-motion";
-import { Building2, Leaf, Lightbulb, Handshake } from "lucide-react";
 import Link from "next/link";
+import Image from "next/image";
 
 const WhyChooseSection = () => {
   const reasons = [
     {
-      icon: <Leaf className="w-12 h-12 text-white" />,
+      image: "/whychooseusimage/green.png", // Path to your image
       title: "Sustainable Practices",
       description: "We prioritize environmentally responsible methods, integrating green technologies and smart design into every project we build.",
       bgClass: "bg-estate-green"
     },
     {
-      icon: <Lightbulb className="w-12 h-12 text-white" />,
+      image: "/whychooseusimage/2nd.png", // Path to your image
       title: "Innovation & Technology",
       description: "We embrace modern construction technologies and forward-thinking strategies to stay ahead of industry standards and trends.",
       bgClass: "bg-estate-blue"
     },
     {
-      icon: <Building2 className="w-12 h-12 text-white" />,
+      image: "/whychooseusimage/3rd.png", // Path to your image
       title: "Quality & Precision",
       description: "Each project is executed with meticulous attention to detail, using top-grade materials and practices to ensure lasting results.",
       bgClass: "bg-estate-purple"
     },
     {
-      icon: <Handshake className="w-12 h-12 text-white" />,
+      image: "/whychooseusimage/4th.png", // Path to your image
       title: "Transparency & Trust",
       description: "We believe in open communication and honesty, fostering lasting relationships with clients, partners, and communities alike.",
       bgClass: "bg-estate-deepGreen"
@@ -43,7 +43,7 @@ const WhyChooseSection = () => {
           <h2 className="text-3xl md:text-4xl font-bold text-estate-darkText mb-4">
             Why Choose Future Prospects
           </h2>
-          <div className="w-24 h-1  mx-auto mb-6"></div>
+          <div className="w-24 h-1 mx-auto mb-6"></div>
           <p className="max-w-3xl mx-auto text-estate-darkText/80 text-lg">
             At Future Prospects, We create value,
             trust, and sustainable growth — building a legacy that lasts.
@@ -54,7 +54,7 @@ const WhyChooseSection = () => {
           {reasons.map((reason, index) => (
             <ReasonCard
               key={index}
-              icon={reason.icon}
+              image={reason.image}
               title={reason.title}
               description={reason.description}
               bgClass={reason.bgClass}
@@ -85,25 +85,28 @@ const WhyChooseSection = () => {
   );
 };
 
-const ReasonCard = ({ icon, title, description, bgClass, index }) => (
+const ReasonCard = ({ image, title, description, bgClass, index }) => (
   <motion.div
     initial={{ opacity: 0, y: 30 }}
     whileInView={{ opacity: 1, y: 0 }}
     viewport={{ once: true }}
     transition={{ duration: 0.5, delay: 0.1 * index }}
-    className="bg-white p-6 rounded-lg shadow-md hover:shadow-lg transition-shadow border-t-4 border-estate-blue"
+    className="bg-white rounded-lg shadow-md hover:shadow-lg transition-shadow overflow-hidden"
   >
-    <motion.div
-      initial={{ scale: 0.8 }}
-      whileInView={{ scale: 1 }}
-      viewport={{ once: true }}
-      transition={{ duration: 0.5, delay: 0.2 + (0.1 * index) }}
-      className={`mb-4 w-16 h-16 rounded-full ${bgClass} flex items-center justify-center shadow-lg mx-auto`}
-    >
-      {icon}
-    </motion.div>
-    <h3 className="text-xl font-semibold text-estate-darkText mb-3 text-center">{title}</h3>
-    <p className="text-estate-darkText/70 text-center">{description}</p>
+    <div className="relative h-48 w-full">
+      <Image
+        src={image}
+        alt={title}
+        fill
+        className="object-cover"
+        sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 25vw"
+      />
+      <div className={`absolute inset-0 ${bgClass} opacity-30`}></div>
+    </div>
+    <div className="p-6">
+      <h3 className="text-xl font-semibold text-estate-darkText mb-3">{title}</h3>
+      <p className="text-estate-darkText/70">{description}</p>
+    </div>
   </motion.div>
 );
 
