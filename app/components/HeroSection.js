@@ -60,7 +60,7 @@ const HeroSection = () => {
       
       {/* Content overlay */}
       <div className="relative z-20 p-4 sm:p-6 md:px-12 md:py-8 max-w-5xl mx-auto h-full">
-        <div className="flex flex-col justify-start items-start pt-15 sm:pt-12 md:pt-16 max-w-xs sm:max-w-sm md:max-w-lg md:ml-0 sm:ml-18">
+      <div className="flex flex-col justify-start items-start pt-15 sm:pt-12 md:pt-16 max-w-xs sm:max-w-sm md:max-w-lg sm:ml-0 2xl:ml-0 md:ml-30">
           {/* Logo above heading with scale animation */}
           <motion.div 
             className="mb-4 sm:mb-6"
