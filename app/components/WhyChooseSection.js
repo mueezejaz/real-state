@@ -5,25 +5,25 @@ import Image from "next/image";
 const WhyChooseSection = () => {
   const reasons = [
     {
-      image: "/whychooseusimage/green.png", // Path to your image
+      image: "/whychooseusimage/1st.jpeg", // Path to your image
       title: "Sustainable Practices",
       description: "We prioritize environmentally responsible methods, integrating green technologies and smart design into every project we build.",
       bgClass: "bg-estate-green"
     },
     {
-      image: "/whychooseusimage/2nd.png", // Path to your image
+      image: "/whychooseusimage/4th.jpeg", // Path to your image
       title: "Innovation & Technology",
       description: "We embrace modern construction technologies and forward-thinking strategies to stay ahead of industry standards and trends.",
       bgClass: "bg-estate-blue"
     },
     {
-      image: "/whychooseusimage/3rd.png", // Path to your image
+      image: "/whychooseusimage/3rd.jpeg", // Path to your image
       title: "Quality & Precision",
       description: "Each project is executed with meticulous attention to detail, using top-grade materials and practices to ensure lasting results.",
       bgClass: "bg-estate-purple"
     },
     {
-      image: "/whychooseusimage/4th.png", // Path to your image
+      image: "/whychooseusimage/2nd.jpeg", // Path to your image
       title: "Transparency & Trust",
       description: "We believe in open communication and honesty, fostering lasting relationships with clients, partners, and communities alike.",
       bgClass: "bg-estate-deepGreen"
