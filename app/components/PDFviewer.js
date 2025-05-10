@@ -8,7 +8,7 @@ const PDFViewer = () => {
   const [scale, setScale] = useState(1);
   const [isLoading, setIsLoading] = useState(true);
 
-  const googleDriveFileId = '1dI56TrE7UHuRcyQmsnbR-l6Ik5l2B86h'; 
+  const googleDriveFileId = '1_z_ZijEYeM0Gd5Zs8gooZPpbFeYnm6fE'; 
   const pdfUrl = './companyprofilepage.pdf';
 
   useEffect(() => {

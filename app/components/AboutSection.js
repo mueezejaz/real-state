@@ -1,10 +1,10 @@
 import { motion } from "framer-motion";
-import { Home, Award, Clock, Shield } from "lucide-react";
+import { Home, Award, Clock, Shield, Building, Zap } from "lucide-react";
 
 const AboutSection = () => {
   return (
     <section id="about" className="py-20 overflow-hidden bg-estate-lightPurple">
-      <div className="container mx-auto px-4  sm:px-6 lg:px-8">
+      <div className="container mx-auto px-4 sm:px-6 lg:px-8">
         <motion.div
           initial={{ opacity: 0, y: 20 }}
           whileInView={{ opacity: 1, y: 0 }}
@@ -17,7 +17,7 @@ const AboutSection = () => {
           </h2>
           <div className="w-24 h-1 bg-estate-darkText mx-auto mb-6"></div>
           <p className="max-w-3xl mx-auto text-estate-darkText/80 text-lg">
-Future Prospects Mordent Business LLC is a Growing provider OSP Works (OMANTEL, OREDOO) Tower Construction (Civil) Road Maintenance Works OBB Fiber Optical Works (Projects & Last Mile) new Installation and Maintenance (Civil) Water line Civil Works Building Contracting & Construction Works (Commercial & Residential) With a strong commitment to quality, efficiency, and innovation, we deliver endto-end solutions for infrastructure projects.
+          Future Prospects Mordent Business LLC is a Growing provider OSP Works (OMANTEL, OREDOO) Tower Construction (Civil) Road Maintenance Works OBB Fiber Optical Works (Projects & Last Mile) new Installation and Maintenance (Civil) Water line Civil Works Building Contracting & Construction Works (Commercial & Residential) With a strong commitment to quality, efficiency, and innovation, we deliver endto-end solutions for infrastructure projects.
           </p>
         </motion.div>
 
@@ -61,14 +61,28 @@ Future Prospects Mordent Business LLC is a Growing provider OSP Works (OMANTEL, 
             </h3>
 
             <p className="text-estate-darkText/80 mb-8">
-              At Future Prospects, our commitment goes beyond bricks and mortar. We integrate sustainable practices, modern technologies, and smart design into our work to ensure efficient, environmentally responsible construction. Every project we undertake reflects our core values: reliability, transparency, and a relentless drive to exceed client expectations.
+              Future Prospects Mordent Business LLC is a Growing provider of:
+            </p>
+            
+            <ul className="list-disc pl-5 mb-8 text-estate-darkText/80">
+              <li>OSP Works (OMANTEL, OREDOO)</li>
+              <li>Tower Construction (Civil)</li>
+              <li>Road Maintenance Works</li>
+              <li>OBB Fiber Optical Works (Projects & Last Mile)</li>
+              <li>new Installation and Maintenance (Civil)</li>
+              <li>Water line Civil Works</li>
+              <li>Building Contracting & Construction Works (Commercial & Residential)</li>
+            </ul>
+
+            <p className="text-estate-darkText/80 mb-8">
+              With a strong commitment to quality, efficiency, and innovation, we deliver end-to-end solutions for infrastructure projects.
             </p>
 
             <div className="grid grid-cols-1 sm:grid-cols-2 gap-6">
               <FeatureItem 
-                icon={<Home className="text-estate-green" />} 
-                title="Sustainable Construction" 
-                description="We use modern technologies and eco-conscious practices for every build." 
+                icon={<Building className="text-estate-green" />} 
+                title="Comprehensive Services" 
+                description="From building construction to telecom infrastructure, we do it all." 
                 bgColor="bg-estate-lightGreen"
               />
 
@@ -87,9 +101,9 @@ Future Prospects Mordent Business LLC is a Growing provider OSP Works (OMANTEL, 
               />
 
               <FeatureItem 
-                icon={<Shield className="text-estate-green" />} 
-                title="Trusted Partner" 
-                description="Built on a foundation of integrity, collaboration, and client satisfaction." 
+                icon={<Zap className="text-estate-green" />} 
+                title="Telecom Expertise" 
+                description="Specialized in civil works for OMANTEL and OOREDOO telecommunications." 
                 bgColor="bg-estate-lightGreen"
               />
             </div>
