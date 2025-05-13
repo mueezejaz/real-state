@@ -55,12 +55,12 @@ const Footer = () => {
           >
             <h3 className="text-lg font-semibold text-estate-white mb-4">Our Services</h3>
             <ul className="space-y-2">
-              <FooterLink href="#" text="Telephony" />
-              <FooterLink href="#" text="Wireless Communication" />
-              <FooterLink href="#" text="Optical Communication" />
-              <FooterLink href="#" text="Data Communication and Networking" />
-              <FooterLink href="#" text="Investment Consulting" />
-              <FooterLink href="#" text="fiber optic installation" />
+              <FooterLink href="#" text="OSP WORKS (Omantel, Ooredoo Motorola)" />
+              <FooterLink href="#" text="LAST MILE WORK" />
+              <FooterLink href="#" text="OPS Maintenance Works Omantel/Ooredoo/Motorla Works" />
+              <FooterLink href="#" text="Civil Construction" />
+              <FooterLink href="#" text="Building Construction (Residential & Commercial)" />
+              <FooterLink href="#" text="Road Maintenance works" />
             </ul>
           </motion.div>
           
