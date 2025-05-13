@@ -116,7 +116,7 @@ const ContactSection = () => {
           </h2>
           <div className="w-24 h-1 bg-estate-darkText mx-auto mb-6"></div>
           <p className="max-w-3xl mx-auto text-estate-darkText/80 text-lg">
-            Want to know more about our Telecommunication Services, OSP, or civil maintenance work? Reach out to Future Prospects Modern Business LLC — we're here to help you build with quality, efficiency, and innovation.
+            Want to know more about our Telecommunication Services, OSP, or civil maintenance work? Reach out to <span className="font-bold">Future Prospects Modern Business LLC</span> — we're here to help you build with quality, efficiency, and innovation.
           </p>
         </motion.div>
 
