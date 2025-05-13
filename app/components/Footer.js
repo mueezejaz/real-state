@@ -65,7 +65,7 @@ const Footer = () => {
             <ul className="space-y-2">
               <FooterLink href="/services" text="OSP WORKS (Omantel, Ooredoo Motorola)" />
               <FooterLink href="/services" text="LAST MILE WORK" />
-              <FooterLink href="/services" text="OPS Maintenance Works Omantel/Ooredoo/Motorla Works" />
+              <FooterLink href="/services" text="OSP Maintenance Works Omantel/Ooredoo/Motorla Works" />
               <FooterLink href="/services" text="Civil Construction" />
               <FooterLink href="/services" text="Building Construction (Residential & Commercial)" />
               <FooterLink href="/services" text="Road Maintenance works" />
