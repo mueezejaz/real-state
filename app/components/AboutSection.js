@@ -17,7 +17,7 @@ const AboutSection = () => {
           </h2>
           <div className="w-24 h-1 bg-estate-darkText mx-auto mb-6"></div>
           <p className="max-w-3xl mx-auto text-estate-darkText/80 text-lg">
-          Future Prospects Mordent Business LLC is a Growing provider OSP Works (OMANTEL, OREDOO) Tower Construction (Civil) Road Maintenance Works OBB Fiber Optical Works (Projects & Last Mile) new Installation and Maintenance (Civil) Water line Civil Works Building Contracting & Construction Works (Commercial & Residential) With a strong commitment to quality, efficiency, and innovation, we deliver endto-end solutions for infrastructure projects.
+            Future Prospects Modern Business LLC is a growing and dynamic Civil Contracting and Telecom Infrastructure Company committed to delivering high-quality construction and infrastructure solutions. With a solid foundation built on expertise, we have been serving with professionalism and a strong emphasis on quality, safety, and timely delivery.
           </p>
         </motion.div>
 
@@ -57,53 +57,48 @@ const AboutSection = () => {
             transition={{ duration: 0.6 }}
           >
             <h3 className="text-2xl font-bold text-estate-darkText mb-6">
-              Building Futures, One Project at a Time
+              Core Areas of Expertise
             </h3>
 
-            <p className="text-estate-darkText/80 mb-8">
-              Future Prospects Mordent Business LLC is a Growing provider of:
-            </p>
-            
             <ul className="list-disc pl-5 mb-8 text-estate-darkText/80">
-              <li>OSP Works (OMANTEL, OREDOO)</li>
-              <li>Tower Construction (Civil)</li>
-              <li>Road Maintenance Works</li>
-              <li>OBB Fiber Optical Works (Projects & Last Mile)</li>
-              <li>new Installation and Maintenance (Civil)</li>
-              <li>Water line Civil Works</li>
-              <li>Building Contracting & Construction Works (Commercial & Residential)</li>
+              <li>Building Construction (residential, commercial, and industrial)</li>
+              <li>Infrastructure development</li>
+              <li>Earthworks and excavation</li>
+              <li>Utilities and drainage systems</li>
+              <li>Structural rehabilitation and retrofitting</li>
+              <li>Civil works for telecom projects (OSP OMANTEL, OOREDOO)</li>
             </ul>
 
             <p className="text-estate-darkText/80 mb-8">
-              With a strong commitment to quality, efficiency, and innovation, we deliver end-to-end solutions for infrastructure projects.
+              We are committed to delivering end-to-end infrastructure solutions with a focus on quality, safety, and timely execution.
             </p>
 
             <div className="grid grid-cols-1 sm:grid-cols-2 gap-6">
               <FeatureItem 
                 icon={<Building className="text-estate-green" />} 
                 title="Comprehensive Services" 
-                description="From building construction to telecom infrastructure, we do it all." 
+                description="From building construction to telecom infrastructure, we cover all aspects." 
                 bgColor="bg-estate-lightGreen"
               />
 
               <FeatureItem 
                 icon={<Award className="text-estate-purple" />} 
                 title="Driven by Excellence" 
-                description="Our skilled team delivers top-quality results that stand the test of time." 
+                description="Professionalism and quality are at the heart of every project we undertake." 
                 bgColor="bg-estate-lightPurple"
               />
 
               <FeatureItem 
                 icon={<Clock className="text-estate-blue" />} 
                 title="Timely Delivery" 
-                description="Precision planning and efficient execution ensure on-time project completion." 
+                description="We emphasize on-time completion through precise planning and execution." 
                 bgColor="bg-estate-lightGray"
               />
 
               <FeatureItem 
                 icon={<Zap className="text-estate-green" />} 
                 title="Telecom Expertise" 
-                description="Specialized in civil works for OMANTEL and OOREDOO telecommunications." 
+                description="Expert civil works for OSP OMANTEL and OOREDOO telecom projects." 
                 bgColor="bg-estate-lightGreen"
               />
             </div>
@@ -133,3 +128,4 @@ const FeatureItem = ({ icon, title, description, bgColor }) => (
 );
 
 export default AboutSection;
+
