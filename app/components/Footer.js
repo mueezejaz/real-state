@@ -1,7 +1,11 @@
 import { motion } from "framer-motion";
+import Link from "next/link";
+import { usePathname } from "next/navigation";
 import { Facebook, Twitter, Instagram, Linkedin, Mail, Phone, MapPin } from "lucide-react";
 
 const Footer = () => {
+  const pathname = usePathname();
+  
   return (
     <footer className="bg-estate-blue border-t border-gray-700">
       <div className="container mx-auto px-4 sm:px-6 lg:px-8 py-12">
@@ -37,12 +41,16 @@ const Footer = () => {
           >
             <h3 className="text-lg font-semibold text-estate-white mb-4">Quick Links</h3>
             <ul className="space-y-2">
-              <FooterLink href="#home" text="Home" />
-              <FooterLink href="#about" text="About Us" />
-              <FooterLink href="#why-choose" text="Why Choose Us" />
-              <FooterLink href="#properties" text="Properties" />
-              <FooterLink href="#contact" text="Contact" />
-              <FooterLink href="#reviews" text="Reviews" />
+              <FooterLink href="/" text="Home" />
+              {pathname === "/" ? (
+                <>
+                  <FooterLink href="#about" text="About Us" />
+                  <FooterLink href="#why-choose" text="Why Choose Us" />
+                  <FooterLink href="#contact" text="Contact" />
+                  <FooterLink href="#reviews" text="Reviews" />
+                </>
+              ) : null}
+              <FooterLink href="/services" text="Services" />
             </ul>
           </motion.div>
           
@@ -55,12 +63,12 @@ const Footer = () => {
           >
             <h3 className="text-lg font-semibold text-estate-white mb-4">Our Services</h3>
             <ul className="space-y-2">
-              <FooterLink href="#" text="OSP WORKS (Omantel, Ooredoo Motorola)" />
-              <FooterLink href="#" text="LAST MILE WORK" />
-              <FooterLink href="#" text="OPS Maintenance Works Omantel/Ooredoo/Motorla Works" />
-              <FooterLink href="#" text="Civil Construction" />
-              <FooterLink href="#" text="Building Construction (Residential & Commercial)" />
-              <FooterLink href="#" text="Road Maintenance works" />
+              <FooterLink href="/services" text="OSP WORKS (Omantel, Ooredoo Motorola)" />
+              <FooterLink href="/services" text="LAST MILE WORK" />
+              <FooterLink href="/services" text="OPS Maintenance Works Omantel/Ooredoo/Motorla Works" />
+              <FooterLink href="/services" text="Civil Construction" />
+              <FooterLink href="/services" text="Building Construction (Residential & Commercial)" />
+              <FooterLink href="/services" text="Road Maintenance works" />
             </ul>
           </motion.div>
           
@@ -111,9 +119,15 @@ const Footer = () => {
             © {new Date().getFullYear()} Future Prospects Modern Business LLC. All rights reserved.
           </p>
           <div className="flex space-x-6 text-sm">
-            <a href="#" className="text-estate-white/80 hover:text-estate-green transition-colors">Privacy Policy</a>
-            <a href="#" className="text-estate-white/80 hover:text-estate-blue transition-colors">Terms of Service</a>
-            <a href="#" className="text-estate-white/80 hover:text-estate-blue transition-colors">Sitemap</a>
+            <Link href="/privacy-policy" className="text-estate-white/80 hover:text-estate-green transition-colors">
+              Privacy Policy
+            </Link>
+            <Link href="/terms-of-service" className="text-estate-white/80 hover:text-estate-blue transition-colors">
+              Terms of Service
+            </Link>
+            <Link href="/sitemap" className="text-estate-white/80 hover:text-estate-blue transition-colors">
+              Sitemap
+            </Link>
           </div>
         </div>
       </div>
@@ -132,23 +146,48 @@ const SocialIcon = ({ icon, href }) => (
   </motion.a>
 );
 
-const FooterLink = ({ href, text }) => (
-  <li>
-    <a 
-      href={href} 
-      className="text-estate-white/80 hover:text-estate-blue transition-colors relative inline-block"
-    >
-      <span className="relative">
-        {text}
-        <motion.span
-          className="absolute left-0 bottom-0 w-full h-0.5 bg-estate-green rounded-full"
-          initial={{ scaleX: 0 }}
-          whileHover={{ scaleX: 1 }}
-          transition={{ duration: 0.3 }}
-        />
-      </span>
-    </a>
-  </li>
-);
+const FooterLink = ({ href, text }) => {
+  // For section links (starting with #)
+  if (href.startsWith("#")) {
+    return (
+      <li>
+        <a 
+          href={href} 
+          className="text-estate-white/80 hover:text-estate-blue transition-colors relative inline-block"
+        >
+          <span className="relative">
+            {text}
+            <motion.span
+              className="absolute left-0 bottom-0 w-full h-0.5 bg-estate-green rounded-full"
+              initial={{ scaleX: 0 }}
+              whileHover={{ scaleX: 1 }}
+              transition={{ duration: 0.3 }}
+            />
+          </span>
+        </a>
+      </li>
+    );
+  }
+  
+  // For page links
+  return (
+    <li>
+      <Link
+        href={href}
+        className="text-estate-white/80 hover:text-estate-blue transition-colors relative inline-block"
+      >
+        <span className="relative">
+          {text}
+          <motion.span
+            className="absolute left-0 bottom-0 w-full h-0.5 bg-estate-green rounded-full"
+            initial={{ scaleX: 0 }}
+            whileHover={{ scaleX: 1 }}
+            transition={{ duration: 0.3 }}
+          />
+        </span>
+      </Link>
+    </li>
+  );
+};
 
 export default Footer;
