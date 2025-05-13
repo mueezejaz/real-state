@@ -96,3 +96,18 @@ body {
   background-image: radial-gradient(var(--color-estate-green) 0.5px, transparent 0.5px);
   background-size: 15px 15px;
 }
+@media (max-height: 850px) {
+  .short-logo {
+    width: 4rem; /* Tailwind w-16 */
+  }
+
+  .short-heading {
+    font-size: 1.75rem; /* Tailwind text-2xl */
+    line-height: 2.25rem;
+  }
+
+  .short-button {
+    padding: 0.5rem 1rem; /* Tailwind py-2 px-4 */
+    font-size: 0.875rem;  /* Tailwind text-sm */
+  }
+}

@@ -72,14 +72,14 @@ const HeroSection = () => {
               <img 
                 src="./real.png" 
                 alt="Company Logo" 
-                className="w-full h-full" 
+                className="w-full h-full short-logo" 
               />
             </div>
           </motion.div>
           
           {/* Main Heading with staggered text animation */}
           <motion.h1 
-            className="text-3xl sm:text-4xl md:text-5xl font-bold leading-tight sm:leading-snug md:leading-tight"
+            className="text-3xl sm:text-4xl md:text-5xl font-bold leading-tight sm:leading-snug md:leading-tight short-heading"
             initial="hidden"
             animate="visible"
             variants={staggerText}
@@ -112,7 +112,7 @@ const HeroSection = () => {
             transition={{ delay: 1.2, duration: 0.5 }}
           >
             <motion.button 
-              className="bg-estate-blue text-white px-6 py-3 rounded-md font-medium"
+              className="bg-estate-blue text-white px-6 py-3 rounded-md font-medium short-button"
               whileHover={{ scale: 1.05 }}
               whileTap={{ scale: 0.95 }}
             >
