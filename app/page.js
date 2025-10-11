@@ -15,10 +15,10 @@ import Footer from "./components/Footer.js";
 
 const Home = () => {
   const { scrollYProgress } = useScroll();
-  const scaleX = useSpring(scrollYProgress, { 
-    stiffness: 100, 
-    damping: 30, 
-    restDelta: 0.001 
+  const scaleX = useSpring(scrollYProgress, {
+    stiffness: 100,
+    damping: 30,
+    restDelta: 0.001
   });
 
   useEffect(() => {
@@ -32,14 +32,14 @@ const Home = () => {
         className="fixed top-0 left-0 right-0 h-1 bg-estate-blue z-50"
         style={{ scaleX, transformOrigin: "0%" }}
       />
-       <Navbar />
+      <Navbar />
       <HeroSection />
       <AboutSection />
       <WhyChooseSection />
       <ContactSection />
       <ReviewsSection />
       <Footer />
-      
+
       {/* Floating buttons */}
       <div className="fixed bottom-6 right-6 flex flex-col items-end gap-4 z-40">
         <BackToTopButton />
@@ -51,20 +51,20 @@ const Home = () => {
 
 const BackToTopButton = () => {
   const { scrollYProgress } = useScroll();
-  
+
   const handleScrollToTop = () => {
     window.scrollTo({
       top: 0,
       behavior: "smooth"
     });
   };
-  
+
   return (
     <motion.button
       className="p-3 rounded-full bg-estate-blue text-white shadow-lg"
       onClick={handleScrollToTop}
       initial={{ opacity: 0, scale: 0.8 }}
-      animate={{ 
+      animate={{
         opacity: scrollYProgress.get() > 0.2 ? 1 : 0,
         scale: scrollYProgress.get() > 0.2 ? 1 : 0.8,
       }}
@@ -78,7 +78,7 @@ const BackToTopButton = () => {
 
 const WhatsAppButton = () => {
   const phoneNumber = "+96879995329"; // your WhatsApp number
-  
+
   return (
     <motion.a
       href={`https://wa.me/${phoneNumber}`}
