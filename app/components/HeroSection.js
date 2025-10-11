@@ -88,7 +88,7 @@ const HeroSection = () => {
               className="text-estate-darkText block"
               variants={slideUp}
             >
-              Building Tomorrow
+              Building
             </motion.span>
             <motion.span
               className="text-gray-800 block"
